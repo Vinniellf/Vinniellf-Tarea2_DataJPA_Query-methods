@@ -17,7 +17,7 @@ public class Employee {
     private String name;
 
     @Column(name = "last_name", nullable = false , length = 20)
-    private String last;
+    private String lastName;
 
     @Column(name = "email", nullable = false , length = 25)
     private String email;
@@ -61,11 +61,11 @@ public class Employee {
         this.name = name;
     }
 
-    public String getLast() {
-        return last;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setLast(String last) {
-        this.last = last;
+    public void setLastName(String last) {
+        this.lastName = last;
     }
 }

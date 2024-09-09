@@ -9,11 +9,11 @@
 <body>
 <div class="container mt-5">
     <h1 class="mb-4">Información</h1>
-    <form method="post" th:action="@{'/employee/guardar'}">
-        <input th:value="${employee.idEmployee}" id="idEmployee" name="idEmployee" type="hidden">
+    <form method="post" th:action="@{'/employee/save'}">
+        <input th:value="${employee.id}" id="id" name="id" type="hidden">
         <div class="mb-3">
             <label for="firstName" class="form-label">Nombre</label>
-            <input th:value="${employee.firstName}" id="firstName" name="firstName" type="text" class="form-control" disabled>
+            <input th:value="${employee.name}" id="firstName" name="firstName" type="text" class="form-control" disabled>
         </div>
         <div class="mb-3">
             <label for="lastName" class="form-label">Apellido</label>
@@ -25,23 +25,23 @@
         </div>
         <div class="mb-3">
             <label for="nameDepartment" class="form-label">Departamento</label>
-            <input th:value="${employee.department.nameDepartment}" id="nameDepartment" name="nameDepartment" type="text" class="form-control" disabled>
+            <input th:value="${employee.department.nombre}" id="nameDepartment" name="nameDepartment" type="text" class="form-control" disabled>
         </div>
         <div class="mb-3">
             <label for="cityName" class="form-label">Ciudad</label>
-            <input th:value="${employee.department.location.cityName}" id="cityName" name="cityName" type="text" class="form-control" disabled>
+            <input th:value="${employee.department.id_locationn.name_city}" id="cityName" name="cityName" type="text" class="form-control" disabled>
         </div>
         <div class="mb-3">
             <label for="job_title" class="form-label">Trabajo</label>
             <select class="form-select" id="job_title" name="job_title">
-                <option th:each="job : ${listaJobs}"
-                        th:value="${job.idJob}"
-                        th:text="${job.nombreJob}">
+                <option th:each="job : ${listJob}"
+                        th:value="${job.id}"
+                        th:text="${job.name}">
 
                 </option>
             </select>
         </div>
-        <a th:href="@{'/employee/listar'}" class="btn btn-primary">Regresar</a>
+        <a th:href="@{'/employee/list'}" class="btn btn-primary">Regresar</a>
         <!--<button type="submit" class="btn btn-success">Guardar</button>-->
     </form>
 </div>
